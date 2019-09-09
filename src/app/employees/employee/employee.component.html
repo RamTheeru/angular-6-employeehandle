@@ -4,13 +4,17 @@
 <div class="contrl-cont">
   <input type="hidden" formControlName="$key" >
   <mat-form-field>
-    <input type="text" formControlname="fullname" matInput placeholder="Full Name">
+    <input type="text" formControlname="fullname" matInput placeholder="Full Name*"/>
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
     <mat-form-field>
     <input type="text" formControlname="email" matInput placeholder="Email">
+    <mat-error>Invalid Email address</mat-error>
   </mat-form-field>
     <mat-form-field>
-    <input type="text" formControlname="phone" matInput placeholder="Phone">
+    <input type="text" formControlname="phone" matInput placeholder="Phone*">
+    <mat-error *ngIf="empServ.form.controls['phone'].errors?.required">this field is mandatory</mat-error>
+        <mat-error *ngIf="empServ.form.controls['phone'].errors?.minlength">minimum 10 characters needed</mat-error>
   </mat-form-field>
     <mat-form-field>
     <input type="text" formControlname="city" matInput placeholder="City">
@@ -42,7 +46,7 @@
   <mat-checkbox formControlname="isPermanent">Permanent Employee</mat-checkbox>
 </div>
 <div class="button-row">
-  <button mat-raised-button color="primary" type="submit">Submit</button> 
+  <button mat-raised-button color="primary" type="submit" [disabled]="empServ.form.invalid">Submit</button> 
    <button mat-raised-button color="warn" >Clear</button> 
 </div>
   </div>
