@@ -33,6 +33,18 @@
       </ng-container>
     </mat-select>
   </mat-form-field>
+      <mat-form-field>
+    <input  formControlname="hireDate" matInput [matDatepicker]="picker" placeholder="Hire Date">
+    <mat-datepicker-toggle matSuffix  [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div class="add-bottom-padding">
+  <mat-checkbox formControlname="isPermanent">Permanent Employee</mat-checkbox>
+</div>
+<div class="button-row">
+  <button mat-raised-button color="primary" type="submit">Submit</button> 
+   <button mat-raised-button color="warn" >Clear</button> 
+</div>
   </div>
 
 </mat-grid-tile>
