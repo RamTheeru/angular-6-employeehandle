@@ -1,2 +1,16 @@
 /* Add application styles & imports to this file! */
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+div.container{
+  margin : 0px 40px;
+}
+.norm{
+  margin:10px;
+}
+.fill-remaining-space{
+  flex:1 1 auto;
+}
+.contrl-cont{
+  padding:5%;
+  width: 100%;
+}

@@ -1,0 +1,21 @@
+<form [formGroup]="empServ.form" class="norm">
+<mat-grid-list cols="2" rowHeight="300px">
+<mat-grid-tile>
+<div class="contrl-cont">
+  <input type="hidden" formControlName="$key" >
+  <mat-form-field>
+    <input type="text" formControlname="fullname" matInput placeholder="Full Name">
+  </mat-form-field>
+    <mat-form-field>
+    <input type="text" formControlname="email" matInput placeholder="Email">
+  </mat-form-field>
+    <mat-form-field>
+    <input type="text" formControlname="phone" matInput placeholder="Phone">
+  </mat-form-field>
+    <mat-form-field>
+    <input type="text" formControlname="city" matInput placeholder="City">
+  </mat-form-field>
+</div>
+</mat-grid-tile>
+</mat-grid-list>
+</form>
