@@ -14,3 +14,12 @@ div.container{
   padding:5%;
   width: 100%;
 }
+.contrl-cont>*{
+  width: 100%;
+}
+.add-bottom-padding{
+  padding-bottom: 10px;
+}
+mat-radio-group mat-radio-button{
+  margin-left: 5px;
+}

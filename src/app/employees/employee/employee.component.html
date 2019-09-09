@@ -17,5 +17,25 @@
   </mat-form-field>
 </div>
 </mat-grid-tile>
+<mat-grid-tile>
+  <div class="control-cont">
+    <div class="add-bottom-padding">
+      <mat-radio-group formControlname="gender">
+          <mat-radio-button value="1">Male</mat-radio-button>
+          <mat-radio-button value="2">Female</mat-radio-button>
+      </mat-radio-group>
+    </div>
+      <mat-form-field>
+    <mat-select formControlname="department"  aria-placeholder="Department" >
+      <mat-option>None</mat-option>
+      <ng-container *ngFor="let dep of departments">
+        <mat-option value="{{dep.id}}">{{dep.value}}</mat-option>
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+  </div>
+
+</mat-grid-tile>
 </mat-grid-list>
+
 </form>
