@@ -4,33 +4,33 @@
 <div class="contrl-cont">
   <input type="hidden" formControlName="$key" >
   <mat-form-field>
-    <input type="text" formControlname="fullname" matInput placeholder="Full Name*">
+    <input type="text" formControlName="fullname" matInput placeholder="Full Name*">
     <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
     <mat-form-field>
-    <input type="text" formControlname="email" matInput placeholder="Email">
+    <input type="text" formControlName="email" matInput placeholder="Email">
     <mat-error>Invalid Email address</mat-error>
   </mat-form-field>
     <mat-form-field>
-    <input type="text" formControlname="phone" matInput placeholder="Phone*">
+    <input type="text" formControlName="phone" matInput placeholder="Phone*">
     <mat-error *ngIf="empServ.form.controls['phone'].errors?.required">this field is mandatory</mat-error>
         <mat-error *ngIf="empServ.form.controls['phone'].errors?.minlength">minimum 10 characters needed</mat-error>
   </mat-form-field>
     <mat-form-field>
-    <input type="text" formControlname="city" matInput placeholder="City">
+    <input type="text" formControlName="city" matInput placeholder="City">
   </mat-form-field>
 </div>
 </mat-grid-tile>
 <mat-grid-tile>
   <div class="control-cont">
     <div class="add-bottom-padding">
-      <mat-radio-group formControlname="gender">
+      <mat-radio-group formControlName="gender">
           <mat-radio-button value="1">Male</mat-radio-button>
           <mat-radio-button value="2">Female</mat-radio-button>
       </mat-radio-group>
     </div>
       <mat-form-field>
-    <mat-select formControlname="department"  aria-placeholder="Department" >
+    <mat-select formControlName="department"  aria-placeholder="Department" >
       <mat-option>None</mat-option>
       <ng-container *ngFor="let dep of departments">
         <mat-option value="{{dep.id}}">{{dep.value}}</mat-option>
@@ -38,12 +38,12 @@
     </mat-select>
   </mat-form-field>
       <mat-form-field>
-    <input  formControlname="hireDate" matInput [matDatepicker]="picker" placeholder="Hire Date">
+    <input  formControlName="hireDate" matInput [matDatepicker]="picker" placeholder="Hire Date">
     <mat-datepicker-toggle matSuffix  [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
   <div class="add-bottom-padding">
-  <mat-checkbox formControlname="isPermanent">Permanent Employee</mat-checkbox>
+  <mat-checkbox formControlName="isPermanent">Permanent Employee</mat-checkbox>
 </div>
 <div class="button-row">
   <button mat-raised-button color="primary" type="submit" [disabled]="empServ.form.invalid">Submit</button> 
