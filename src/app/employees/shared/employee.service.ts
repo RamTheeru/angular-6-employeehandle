@@ -16,5 +16,18 @@ export class EmployeeService {
     hireDate :  new FormControl(''),
     isPermanent :  new FormControl(false)
   })
+initializeForm(){
+  this.form.setValue({
+    $key:null,
+    fullname:'',
+    gender:'',
+    email:'',
+    phone:'',
+    department:0,
+    city:'',
+    hireDate:'',
+    isPermanent:false
 
+  });
+}
 }

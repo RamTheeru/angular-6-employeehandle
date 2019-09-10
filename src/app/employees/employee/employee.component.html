@@ -31,7 +31,7 @@
     </div>
       <mat-form-field>
     <mat-select formControlName="department"  aria-placeholder="Department" >
-      <mat-option>None</mat-option>
+      <mat-option value="0">None</mat-option>
       <ng-container *ngFor="let dep of departments">
         <mat-option value="{{dep.id}}">{{dep.value}}</mat-option>
       </ng-container>
@@ -47,7 +47,7 @@
 </div>
 <div class="button-row">
   <button mat-raised-button color="primary" type="submit" [disabled]="empServ.form.invalid">Submit</button> 
-   <button mat-raised-button color="warn" >Clear</button> 
+   <button mat-raised-button color="warn" (click)="onClear()" >Clear</button> 
 </div>
   </div>
 
