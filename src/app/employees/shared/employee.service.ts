@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import {FormGroup,FormControl,Validators} from '@angular/forms';
+import { AngularFireDatabase,AngularFireList} from 'angularfire2/database';
 
 @Injectable()
 export class EmployeeService {
-
-  constructor() { }
+employeeList : AngularFireList<any>;
+  constructor( private firebase : AngularFireDatabase) { }
   form : FormGroup = new FormGroup({
     $key : new FormControl(null),
     fullname : new FormControl('',Validators.required),
@@ -30,4 +31,38 @@ initializeForm(){
 
   });
 }
+getemployees(){
+  this.employeeList=this.firebase.list('employees');
+
+  return this.employeeList.snapshotChanges();
+}
+insertEmployee(employee){
+  this.employeeList.push({
+    fullname : employee.fullname,
+       gender:employee.gender,
+    email:employee.email,
+    phone:employee.phone,
+    department:employee.department,
+    city:employee.city,
+    hireDate:employee.hireDate,
+    isPermanent:employee.isPermanent
+
+  })
+
+}
+  updateEmployee(employee){
+    this.employeeList.update(employee.$key,{
+    fullname : employee.fullname,
+       gender:employee.gender,
+    email:employee.email,
+    phone:employee.phone,
+    department:employee.department,
+    city:employee.city,
+    hireDate:employee.hireDate,
+    isPermanent:employee.isPermanent
+    });
+  }
+  deleteEmployee($key:string){
+    this.employeeList.remove($key);
+  }
 }
