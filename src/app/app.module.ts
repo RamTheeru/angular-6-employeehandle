@@ -14,7 +14,8 @@ import { EmployeeService } from './employees/shared/employee.service';
 import {environment} from './environment';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,MaterialModule,ReactiveFormsModule,BrowserAnimationsModule,AngularFireDatabaseModule,AngularFireModule.initializeApp(environment.firebaseConfig) ],
+  imports:      [ BrowserModule, FormsModule,MaterialModule,ReactiveFormsModule,BrowserAnimationsModule,AngularFireDatabaseModule,
+  AngularFireModule.initializeApp(environment.firebaseConfig) ],
   declarations: [ AppComponent, HelloComponent, EmployeesComponent, EmployeeComponent ],
   bootstrap:    [ AppComponent ],
   providers: [EmployeeService]
