@@ -14,9 +14,19 @@ export class EmployeeComponent implements OnInit {
   constructor(private empServ:EmployeeService) { }
 
   ngOnInit() {
+    this.empServ.getemployees();
   }
 onClear(){
   this.empServ.form.reset();
   this.empServ.initializeForm();
+}
+onSubmit(){
+  if(this.empServ.form.valid)
+  {
+    this.empServ.insertEmployee(this.empServ.form.value);
+  }
+  this.empServ.form.reset();
+  this.empServ.initializeForm();
+
 }
 }
