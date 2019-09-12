@@ -33,7 +33,7 @@
     <mat-select formControlName="department"  aria-placeholder="Department" >
       <mat-option value="0">None</mat-option>
       <ng-container *ngFor="let dep of departments">
-        <mat-option value="{{dep.id}}">{{dep.value}}</mat-option>
+        <mat-option value="{{dep.$key}}">{{dep.name}}</mat-option>
       </ng-container>
     </mat-select>
   </mat-form-field>
