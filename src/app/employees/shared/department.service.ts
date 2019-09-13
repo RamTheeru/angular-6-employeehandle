@@ -12,7 +12,7 @@ departmentList : AngularFireList<any>;
         this.array=list.map(
           item=>{return {
             $key:item.key,
-            ...item.payload.load()
+            ...item.payload.val()
           };
           }
         )
