@@ -17,7 +17,7 @@ export class EmployeeComponent implements OnInit {
 
   ngOnInit() {
     this.empServ.getemployees();
-    this.departments=this.depServ.array;
+    //this.departments=this.depServ.array;
   }
 onClear(){
   this.empServ.form.reset();

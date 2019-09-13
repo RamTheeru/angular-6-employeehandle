@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase,AngularFireList} from 'angularfire2/database';
 
-@Injectable()
+@Injectable(
+  {
+    providedIn:'root'
+  }
+)
 export class DepartmentService {
   array=[];
 departmentList : AngularFireList<any>;
@@ -9,15 +13,13 @@ departmentList : AngularFireList<any>;
     this.departmentList=this.firebase.list('departments');
     this.departmentList.snapshotChanges().subscribe(
       list=>{
-        this.array=list.map(
-          item=>{return {
+        this.array=list.map(item=>{
+        return {
             $key:item.key,
             ...item.payload.val()
           };
-          }
-        )
-      }
-    )
+          });
+      });
    }
 
   
