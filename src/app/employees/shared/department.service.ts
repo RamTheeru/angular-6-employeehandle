@@ -20,6 +20,7 @@ departmentList : AngularFireList<any>;
           };
           });
       });
+      console.log(this.array);
    }
 
   

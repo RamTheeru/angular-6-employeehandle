@@ -14,11 +14,12 @@ import { EmployeeService } from './employees/shared/employee.service';
 import {environment} from './environment';
 import { DepartmentService } from './employees/shared/department.service';
 import { NotificationService } from './employees/shared/notification.service';
+import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,MaterialModule,ReactiveFormsModule,BrowserAnimationsModule,AngularFireDatabaseModule,
   AngularFireModule.initializeApp(environment.firebaseConfig) ],
-  declarations: [ AppComponent, HelloComponent, EmployeesComponent, EmployeeComponent ],
+  declarations: [ AppComponent, HelloComponent, EmployeesComponent, EmployeeComponent, EmployeeListComponent ],
   bootstrap:    [ AppComponent ],
   providers: [EmployeeService, DepartmentService, NotificationService]
 })
