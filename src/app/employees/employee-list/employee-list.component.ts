@@ -10,7 +10,7 @@ import { AngularFireDatabase,AngularFireList} from 'angularfire2/database';
 })
 export class EmployeeListComponent implements OnInit {
 array=[];
-displayedColumns : string[]=['fullname','email','phone','city'];
+displayedColumns : string[]=['fullname','email','phone','city','actions'];
   constructor(private empServ : EmployeeService,
   private firebase : AngularFireDatabase) { }
 employeeList : AngularFireList<any>;

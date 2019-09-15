@@ -16,7 +16,8 @@ import * as Material from '@angular/material';
     Material.MatNativeDateModule,
     Material.MatButtonModule,
     Material.MatSnackBarModule,
-    Material.MatTableModule
+    Material.MatTableModule,
+    Material.MatIconModule
   
   ],
   exports :[
@@ -31,7 +32,8 @@ import * as Material from '@angular/material';
           Material.MatNativeDateModule,
            Material.MatButtonModule,
        Material.MatSnackBarModule,
-        Material.MatTableModule
+        Material.MatTableModule,
+        Material.MatIconModule
   
      ],
   declarations: []
