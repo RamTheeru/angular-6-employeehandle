@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EmployeeService} from '../shared/employee.service';
 import {DepartmentService} from '../shared/department.service';
 import {NotificationService} from '../shared/notification.service';
+import {MatDialogRef} from '@angular/material';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -15,7 +16,7 @@ export class EmployeeComponent implements OnInit {
   // ];
   departments : [];
   constructor(private empServ:EmployeeService,private depServ : DepartmentService,
-  private notfServ:NotificationService) { }
+  private notfServ:NotificationService,public dialogRef:MatDialogRef<EmployeeComponent>) { }
 
   ngOnInit() {
     this.empServ.getemployees();
@@ -32,8 +33,10 @@ onSubmit(){
     this.empServ.insertEmployee(this.empServ.form.value);
     this.notfServ.success('inserted successfully!!!');
   }
+ 
   this.empServ.form.reset();
   this.empServ.initializeForm();
+   this.dialogRef.close();
 
 }
 }
