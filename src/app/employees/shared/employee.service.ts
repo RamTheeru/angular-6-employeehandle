@@ -14,7 +14,7 @@ employeeList : AngularFireList<any>;
     phone : new FormControl('',[Validators.required,Validators.minLength(10)]),
     department :  new FormControl(0),
     city :  new FormControl(''),
-    hireDate :  new FormControl(''),
+   // hireDate :  new FormControl(''),
     isPermanent :  new FormControl(false)
   })
 initializeForm(){
@@ -26,7 +26,7 @@ initializeForm(){
     phone:'',
     department:0,
     city:'',
-    hireDate:'',
+    //hireDate:'',
     isPermanent:false
 
   });
@@ -37,6 +37,7 @@ getemployees(){
   return this.employeeList.snapshotChanges();
 }
 insertEmployee(employee){
+  console.log(employee);
   this.employeeList.push({
     fullname : employee.fullname,
        gender:employee.gender,
@@ -44,11 +45,15 @@ insertEmployee(employee){
     phone:employee.phone,
     department:employee.department,
     city:employee.city,
-    hireDate:employee.hireDate,
+    //hireDate:employee.hireDate,
     isPermanent:employee.isPermanent
 
   })
 
+}
+populateForm(employee){
+  console.log(employee)
+this.form.setValue(employee);
 }
   updateEmployee(employee){
     this.employeeList.update(employee.$key,{
@@ -58,7 +63,7 @@ insertEmployee(employee){
     phone:employee.phone,
     department:employee.department,
     city:employee.city,
-    hireDate:employee.hireDate,
+   // hireDate:employee.hireDate,
     isPermanent:employee.isPermanent
     });
   }

@@ -1,3 +1,10 @@
+<mat-toolbar>
+  <!-- <span>{{empServ.form.controls['$key'].value?"Edit Employee : New Employee"}}</span> -->
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
+    <mat-icon>X</mat-icon>
+  </button>
+</mat-toolbar>
 <form [formGroup]="empServ.form" class="norm" (submit)="onSubmit()">
 <mat-grid-list cols="2" rowHeight="300px">
 <mat-grid-tile>
@@ -37,11 +44,11 @@
       </ng-container>
     </mat-select>
   </mat-form-field>
-      <mat-form-field>
+      <!-- <mat-form-field>
     <input  formControlName="hireDate" matInput [matDatepicker]="picker" placeholder="Hire Date">
     <mat-datepicker-toggle matSuffix  [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
+  </mat-form-field> -->
   <div class="add-bottom-padding">
   <mat-checkbox formControlName="isPermanent">Permanent Employee</mat-checkbox>
 </div>

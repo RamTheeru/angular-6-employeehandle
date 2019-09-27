@@ -25,18 +25,29 @@ export class EmployeeComponent implements OnInit {
 onClear(){
   this.empServ.form.reset();
   this.empServ.initializeForm();
-  this.notfServ.success('all fields cleared!!!');
+  this.notfServ.success('all fields cleared!!! ');
 }
 onSubmit(){
   if(this.empServ.form.valid)
   {
-    this.empServ.insertEmployee(this.empServ.form.value);
+    if(this.empServ.form.get('$key').value)
+    {
+                  this.empServ.updateEmployee(this.empServ.form.value);
+    this.notfServ.success('Updated successfully!!!');
+    }
+    else{
+          this.empServ.insertEmployee(this.empServ.form.value);
     this.notfServ.success('inserted successfully!!!');
+    }
+  
   }
  
-  this.empServ.form.reset();
+  this.onClose();
+
+}
+onClose(){
+    this.empServ.form.reset();
   this.empServ.initializeForm();
    this.dialogRef.close();
-
 }
 }

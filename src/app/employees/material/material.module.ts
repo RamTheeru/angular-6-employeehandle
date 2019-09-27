@@ -19,6 +19,7 @@ import * as Material from '@angular/material';
     Material.MatTableModule,
     Material.MatIconModule,
     Material.MatDialogModule
+   
   
   ],
   exports :[
