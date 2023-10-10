@@ -7,7 +7,7 @@
     "@angular/cdk": "6.0.0",
     "@angular/common": "6.0.0",
     "@angular/compiler": "7.2.4",
-    "@angular/core": "7.2.4",
+    "@angular/core": "10.2.5",
     "@angular/fire": "5.0.0",
     "@angular/forms": "6.0.0",
     "@angular/material": "6.0.0",
